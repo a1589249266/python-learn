@@ -1,0 +1,111 @@
+关于幻灯片逻辑
+Css 结构 
+4个按钮 用ol li编写 到哪一张图片哪一个按钮变色
+一对上一张 下一张按钮
+Js
+#00建立flag参数=false 作用不知道
+建立参数提取 （图片）ul li属性集合
+第一部分按钮变色使用 for循环 用addclass（变色的方法）
+#01提取li 加入到按钮栏 意义不知道似乎是根据提取到的ul的长度来判读 圆点个数
+为之后更新留下余地
+第二部  #02分改变图片位置 第一张放到显示区域其他挪到右侧外边 ：first好像是指第一个元素之前没见过 是一个选择器选择第一个元素 但是这里再用left坐标来处理其他图片变得似乎不可能
+第三部分圆点单击
+提取圆点父类集合的所有属性
+建立全局参数提取当前下标
+建立全局参数提取之后下标
+给圆点建立点击事件 内容为提取此时单击圆点下标为之后坐标 
+ #03调用move（）方法作用不明
+后加在动画效果 执行函数 遍历所选对象 添加效果 遍历所有非所选对象或同胞元素 删除效果
+第五部分 连接圆点与图片
+建立move（）#03 作用图片移动
+Move方法  内有五个判断 和最终执行效果
+第一个如果现在坐标 小于 之后坐标 向后即向左移动一张或数张
+效果；动用直接动画函数将选中坐标图片移至显示区域右侧
+最终效果；用动画效果 将之后坐标图片拉入显示区域
+  第二个如果 现在大于之后 即向右移动一张
+效果；动用直接动画函数将选中坐标图片移至显示区域  左侧
+最终效果 用动画效果 将之后坐标图片拉入显示区域
+#04 Flag 为 false 意义不知道
+  第三个如果 之后下标大于  （图片集合长度-1=实际下标数） 即超过第四张图片
+目标效果 将第一张图片按照第一个如果 的效果来 拉入显示区域
+#04 Flag 为 false 意义不知道
+  第四个如果 之后下标小于0 即从第一张图片向右移动 应该显示第4张图片
+定义现在小标为0 之后下标为要显示的图片的下标即第四张 下标为集合长度-1
+参照第二个如果 到左边再挪进去就好
+最终效果 将要显示的之后下标图片挪入 #04   并将之后下标赋值个现在下标
+第六部分 两个方向的按钮
+建立参数提取左方向方法
+建立参数提取右方向方法
+给左设立单击事件 之后下标++=之后下标+1
+判断如果#04 flag为true则停止执行否则跳过判断并将flag设置为true并执行move方法来移动图片 并圆点添加深色效果 
+事件源（提取圆点集合的参数）。遍历所选对象。添加效果。遍历所有同胞元素.删除深色效果
+给右设置点击事件 坐标 效果全相反
+第七部分 定时器 自动播放
+
+建立时间参数为null
+用它设置定时器(执行行为 ，时间间隔)
+自动播放方法
+之后下标++
+Move（）
+动画给圆点添加效果
+
+鼠标进入离开 打开停止定时器 hover将两者合并
+Clearinterval（时间参数）
+
+之后设置时间参数
+检测到中文简体
+  
+英文
+ 自动翻译  人工翻译
+About the slide logic
+Css structure
+Four buttons are written in ol li which image which button changes color
+A pair of last buttons
+Js
+Setting flag parameter =false does not know
+Set up parameter extraction (image) ul li attribute set
+The first part of the button changes color and USES the for loop to use addclass (color-changing method)
+The extraction of li into the button does not seem to be based on the length of the extracted ul to determine the number of dots
+Leave room for later updates
+The second # 02 points location change between them on the other to move to the right side of the display area outside: first as if she had not seen before is to point to the first element is a selector to choose the first element but here again use left coordinates to handle other images to seem impossible
+The third part of the dot click
+Extract all properties of the blob parent collection
+Set up global parameters to extract the current index
+A global parameter is established to extract the lower index
+To create a click event for the dot, click the dot subscript for the following coordinate
+The call to move () is unknown
+Add effect to the selected object in the animated effect execution function iterate over all the non-selected objects or sibling element deletion effects
+The fifth part connects dots and pictures
+Set up move () #03
+There are five judgment and final execution effects in the Move method
+The first one, if the coordinates are less than the next one, then you move one or more of them to the left
+The effect;Use the direct animation function to move the selected coordinate image to the right of the display area
+Final effect;Use the animation effect to pull the coordinate image into the display area
+The second one, if it's greater than then, move one to the right
+The effect;Use the direct animation function to move the selected coordinate image to the left of the display area
+The final effect USES the animation effect to pull the coordinate image into the display area
+Flag is false meaning I don't know
+The third one, if the subscript is greater than (the length of the picture set length -1= actual subscript number), is more than the fourth picture
+The target effect pulls the first image into the display area according to the first effect
+Flag is false meaning I don't know
+And the fourth one, if it's less than 0 then the first image to the right should show the fourth picture
+I'm going to define the subscript that I'm going to show when I'm going to be zero and I'm going to have a subscript that's going to show me the fourth index is the set length minus 1
+Let's look at the second one if we go to the left and we can just move it in
+The final result will be shown after the subscript image is moved into #04 and then the subscript will be assigned to the lower index
+The buttons in the two directions of the sixth part
+Set up parameters to extract left direction method
+Set up parameters to extract right direction
+I'm going to put a click on the left and then I'm going to have the index ++= and then I'm going to have the index +1
+If #04 flag is true then stop executing or skip the judgment and set the flag to true and execute the move method to move the image and the dot to add a dark effect
+Event source (extraction of parameters from a set of dots).Iterate over the selected object.Add effects.Iterate through all sibling elements. Remove dark effects
+Setting the right click event has the opposite effect
+Part vii timer is automatically played
+Set the time parameter to be null
+Use it to set the timer (perform actions, time intervals)
+Automatic play method
+And then I'm going to have a subscript ++
+Move ()
+The animation adds effect to the dot
+The mouse enters and leaves the stop timer hover to merge the two
+Clearinterval (time parameter)
+Then set the time parameter
